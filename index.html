@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../../images/ico/SEAS-favicon.png" rel="icon" type="image/x-icon"/>
+
+    <title>CrimsonDB - DASlab @ Harvard University</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/main0.css" rel="stylesheet">
+        <link href="css/lsm_button.css" rel="stylesheet">
+    <link href="css/tooltip.css" rel="stylesheet">
+
+    <!-- Custom JS -->
+    <script src="js/lsm_bush_in_action.js"></script>
+    <script src="js/autoRerun.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/3227f266ec.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker|Reenie+Beanie|Rock+Salt|Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Source+Sans+Pro" rel="stylesheet">
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">CrimsonDB</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#overview">Overview</a>
+                    </li>
+<!--                     <li class="page-scroll">
+                        <a href="#research">Research</a>
+                    </li> -->
+<!--                     <li class="page-scroll">
+                        <a href="#people">People</a>
+                    </li> -->
+                     <li class="page-scroll">
+                        <a href="#interactiveDemo">CrimsonDB in Action</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#publications">Publications</a>
+                    </li>
+<!--                     <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li> -->
+                    <li class="page-scroll">
+                        <a href="http://daslab.seas.harvard.edu">DASlab</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header class="viewport">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+                    <img class="img-responsive img-centered" src="images//CRDB.png" alt="CrimsonDB">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="intro-text">
+                        <span class="name">A Self-Designing Key-Value Store</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Overview -->
+    <section class="alternate"  id="overview">
+        <div class="container">
+<!--             <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Overview</h2>
+                        <br/>
+                        <br/>
+                </div>
+            </div> -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="fancy-title text-center">CrimsonDB: <em>Zero Knobs, High Performance</em></h1>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-center">
+
+                    <i class="fa fa-cogs fa-5x" aria-hidden="true"></i>
+                    <p class="text-center">Self-design</p>
+                </div>
+                <div class="col-sm-9">
+
+                    <!-- <p>CrimsonDB is a new <em>plug and play</em> key-value store. It offers optimal reads and writes given a memory budget and an application workload. CrimsonDB decides autonomously how to change its core design to adjust to workload, hardware and other parameters.</p> -->
+                    <p>CrimsonDB decides autonomously how to change its core design to adjust to workload, hardware and other parameters. It can assume arbitrary shapes in between the core design classes of log, LSM-tree, B-tree, and their hybrids. It offers optimal reads and writes given a memory budget and an application workload. </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-center">
+
+                    <i class="fa fa-tachometer fa-5x" aria-hidden="true"></i>
+                    <p class="text-center">Performance</p>
+                </div>
+                <div class="col-sm-9">
+
+                    <!-- <p>We build CrimsonDB by <em>mapping</em> the whole possible design space of key-value stores which allows us to discover key design optimizations. Through them we push read and write performance towards the optimal behavior while at the same time discover the rules that govern automation.</p> -->
+                    <p>We build CrimsonDB by mapping the whole possible design space of key-value stores. This allows us to discover new designs and optimizations. Through them we push read and write performance towards the optimal behavior, while at the same time discover the rules that govern automation.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3 text-center">
+
+                    <i class="fa fa-question fa-5x" aria-hidden="true"></i>
+                    <p class="text-center">What if?</p>
+                </div>
+                <div class="col-sm-9">
+                    <!-- <p>
+                    CrimsonDB offers advanced system design exploration properties such as <em>allowing to argue about hardware properties and the potential benefit when adding new hardware</em> or <em>what kind of hardware would bring a required performance property for a given workload</em>.</p> -->
+                    <p>CrimsonDB offers advanced system design exploration features such as allowing to reason about hardware properties and the potential benefit when adding new hardware or what kind of low level system design choices would bring a required performance property for a given workload.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- <p>At its core, CrimsonDB is an LSM-tree/B-tree hybrid built in C++. The first major technical innovation of CrimsonDB is published in our SIGMOD 2017 Monkey paper which offers optimal Bloom filter allocation and a first set of what-if design and auto-tuning properties. <a href="../../monkey" taget="_blank">Click here for our interactive online tool showcasing the what-if and the autotuning capabilities of Monkey!</a> The second major technical innovation of CrimsonDB is published in our SIGMOD 2018 Dostoevsky paper which offers better trade-offs between lookup costs, merge overheads, and storage space by identifying and removing superfluous merge operations. </p>
+                    <br/>
+                    <p class="text-center">Stay tuned for more!</p> -->
+                    <p>
+                    Some of the technology is published in research papers. The <a href="https://stratos.seas.harvard.edu/files/stratos/files/datacalculator.pdf" target="_blank"> Data Calculator paper in SIGMOD 2018 </a> shows how we can synthesize more data structures than stars on the sky to pick the right one for a given problem. The <a href="https://stratos.seas.harvard.edu/files/stratos/files/selfdesign.pdf" target="_blank"> Design continuums paper in CIDR 2019 </a> shows how we can perceive all core NoSQL data structures as a single data structure! The <a href="https://stratos.seas.harvard.edu/files/stratos/files/monkeykeyvaluestore.pdf" target="_blank"> Monkey SIGMOD 2017 </a> and <a href="https://stratos.seas.harvard.edu/files/stratos/files/monkeytods.pdf" target="_blank"> TODS 2018 </a> papers show how to pick the optimal number of bits for each bloom filter in an LSM-tree and how to pick the optimal size ratio and merge policy. The
+                    <a href="https://stratos.seas.harvard.edu/files/stratos/files/dostoevskykv.pdf" target="_blank"> Dostoevsky paper in SIGMOD 2018 </a> offers better trade-offs between lookup costs, merge overheads, and storage space by identifying and removing superfluous merge operations in NoSQL systems.
+                  </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Research -->
+<!--     <section class="alternate"  id="research">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Research</h2>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+        </div>
+    </section> -->
+
+    <!-- People Section -->
+<!--     <section  id="people">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>People</h2>
+                        <br/>
+                        <br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <a href="http://people.seas.harvard.edu/~manos/" target="_blank" title="Manos' Website">
+                            <img src="../images/team/manos.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Manos Athanassoulis</h4>
+                            <p class="text-muted">Postdoctoral Researcher</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <a href="http://scholar.harvard.edu/msk/" target="_blank" title="Mike' Website">
+                            <img src="../images/team/michael.jpg" class="img-responsive img-circle" alt="">
+                            <h4>Michael S. Kester</h4>
+                            <p class="text-muted">Graduate Researcher</p>
+                        </a>
+                    </div>
+                </div>
+	            <div class="col-sm-3">
+                    <div class="team-member">
+                   		<a href="http://scholar.harvard.edu/maas/" target="_blank" title="Lukas' Website">
+                        	<img src="../images/team/lukas.jpg" class="img-responsive img-circle" alt="">
+							<h4>Lukas Maas</h4>
+							<p class="text-muted">Graduate Researcher</p>
+                        </a>
+                    </div>
+                </div>
+	            <div class="col-sm-3">
+                    <div class="team-member">
+                   		<a href="http://stratos.seas.harvard.edu/" target="_blank" title="Stratos' Website">
+                        	<img src="../images/team/stratos.jpg" class="img-responsive img-circle" alt="">
+							<h4>Stratos Idreos</h4>
+							<p class="text-muted">Assistant Professor of Computer Science</p>
+                        </a>
+                    </div>
+                </div>
+			</div>
+        </div>
+    </section> -->
+
+    <section id="interactiveDemo">
+        <div class="container page-scroll" style="width:1350px;">
+
+            <!-- <a href="#interactiveDemo" id="interactiveDemo"></a>  -->
+
+            <!-- <div id="interactiveDemo" class="row" style="">  -->
+            <!-- </div>  -->
+
+            <div class="row" style="text-align: center">
+                <div class="col-sm-4" data-tooltip="The dataset consists of 1 TB of data comprising unique 16-byte key-value pairs of 8-byte keys" data-tooltip-position="bottom">
+                    <div id="dataset-trigger" onclick="showDataset()">
+                        <img class="img-responsive img-centered" style="width:24%" src="./images/data.png"/ >
+                        <br>
+                        <span style="cursor: pointer;font-size:25px" id="data-text" >
+                            data
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4" data-tooltip="The workload consists of 50.000% writes, 49.999% point lookups, and 0.001% range lookups with  target range of 8192 entries" data-tooltip-position="bottom">
+                    <div id="workload-trigger" onclick="showWorkload()">
+                        <img class="img-responsive img-centered" style="width:24%" src="./images/workload.png"/>
+                        <br>
+                        <span style="cursor: pointer;font-size:25px" id="workload-text" >workload</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-4" data-tooltip="The storage device is an SSD with 4 KB blocks and for which reading a block takes 20 microseconds and writing a block takes 100 microseconds" data-tooltip-position="bottom">
+                    <div id="storage-device-trigger" onclick="showStorageDevice()">
+                        <img class="img-responsive img-centered" style="width:24%" src="./images/storage.png"/>
+                        <br>
+                        <span style="cursor: pointer; font-size:25px" id="storage-text" >hardware</span>
+                    </div>
+                </div>
+
+
+
+                <div id="dataset-setting" class="row" style="display:none">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group" >
+                        <span class="input-group-addon"><span data-tooltip="Number of Entries in the Index (e.g., 10485760), which automatically changes the Level number" data-tooltip-position="bottom"> # Entries</span></span>
+                        <input id="N" type="text" class="form-control" aria-label="Index Size N (elements)" placeholder="Number of Entries in the Index (e.g., 10485760)" style="text-align:right" onchange="re_run(event, 'dataset_input')"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Key-Value pair size in bytes (e.g., 16)." data-tooltip-position="bottom"> Entry size (bytes)</span></span>
+                        <input id="E" type="number" class="form-control" aria-label="Key-Value pair size (bytes)" placeholder="Key-Value pair size in bytes (e.g., 16)" style="text-align:right" onchange="re_run(event, 'dataset_input')" onwheel="re_run(event, 'dataset_input')"  />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Key size in bytes (e.g., 8)." data-tooltip-position="bottom"> Key size (bytes)</span></span>
+                        <input id="Key-Size" type="text" class="form-control" aria-label="Key size (bytes)" placeholder="Key size in bytes (e.g., 8)" style="text-align:right" onchange="re_run(event, 'dataset_input')"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="storage-device-setting" class="row" style="display:none">
+                  <div class="row">
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Block Size in bytes (e.g., 4096)." data-tooltip-position="bottom"> Block size (bytes)</span></span>
+                        <input id="P" type="number" class="form-control" aria-label="Block Size B (bytes)" placeholder="Block Size in bytes (e.g., 4096)" style="text-align:right" onchange="re_run(event, 'storage_input')" onwheel="re_run(event, 'storage_input')"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Read Latency (microseconds)" data-tooltip-position="bottom"> Read Latency (&mu;s) </span></span>
+                        <input id="read-latency" type="text" class="form-control" aria-label="mu" placeholder="Read Latency (e.g., 20)" style="text-align:right" onchange="re_run(event, 'storage_input')" />
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Write Latency (microseconds)" data-tooltip-position="bottom"> Write Latency (&mu;s) </span></span>
+                        <input id="write-latency" type="text" class="form-control" aria-label="mu" placeholder="Write Latency (e.g., 100)" style="text-align:right" onchange="re_run(event, 'storage_input')" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div id="workload-setting" class="row" style="display:none">
+                  <!-- <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4"> <h4>Writes</h4></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"> <h4>Range Lookups</h4> </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4"> <h4>Point Lookups</h4> </div>
+                  </div> -->
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Proportion of Write" data-tooltip-position="bottom"> Proportion of Write </span></span>
+                        <input id="w" type="text" class="form-control" aria-label="proportion of write operation" placeholder=" w (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'workload_input')" />
+                      </div>
+
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Obsolescence Coefficient" data-tooltip-position="bottom"> Obsolescence Coefficient </span></span>
+                        <input id="obsolete_coefficient" type="text" class="form-control" aria-label="Obsolescence Coefficient" placeholder=" Obsolescence Coefficient (e.g., 0)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Proportion of Range Lookup Operation" data-tooltip-position="bottom"> Proportion of  Range Lookup  </span></span>
+                        <input id="qL" type="text" class="form-control" aria-label="proportion of range lookup operation" placeholder=" qL (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
+                      </div>
+
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="The number of unique entries in the target key range" data-tooltip-position="bottom"> Target Range Size </span></span>
+                        <input id="s" type="number" class="form-control" aria-label="Proportion" placeholder=" s (e.g., 2048)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'workload_input')"/>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Proportion of Existig Point Lookup Operation" data-tooltip-position="bottom"> Proportion of Existig Point Lookup </span></span>
+                        <input id="v" type="text" class="form-control" aria-label="proportion of existing point lookup operation" placeholder=" v (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
+                      </div>
+
+                      <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Proportion of Non-result Point Lookup Operation" data-tooltip-position="bottom"> Proportion of Non-result Point Lookup </span></span>
+                        <input id="r" type="text" class="form-control" aria-label="proportion of non-result point lookup operation" placeholder=" r (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+            <!-- Configuration for each architecture -->
+            <div class="row" style="margin:20px 0px">
+                <!-- LSH-Table -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <!-- <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a id="scenario1" class="btn btn-default btn-params" type="button" onclick="initScenario1(event)"><span data-tooltip="Using the default LSH-Table configuration." data-tooltip-position="bottom" style="text-decoration:underline; text-decoration-style: dotted;">LSH-Table</span></a>
+                        </span>
+                    </div> -->
+                    <div class="row" style="text-align: center">
+                      <span style="font-size:24px" data-tooltip="Log-Structured Hash-Table" data-tooltip-position="bottom" >LSH-Table</span>
+                    </div>
+
+                    <div class="input-group">
+                    <span class="input-group-addon"><span data-tooltip="The fraction of obsolete entries at which point garbage-collection is triggered  (e.g., 0.5)." data-tooltip-position="bottom"> Garbage Collection Threshold </span></span>
+                      <input id="lsh_table_gc_threshold" type="text" class="form-control" aria-label="threshold for garbage collection" placeholder="(e.g., 0.5)" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                    </div>
+
+
+
+                    <div class="input-group" style="display:none">
+                      <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                      <input id="lsh_table_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
+                    </div>
+
+                    <div class="input-group">
+                    <span class="input-group-addon"><span data-tooltip="The size of compact key signature (e.g., 10)." data-tooltip-position="bottom"> Key Signature Size (bits) </span></span>
+                      <input id="lsh_table_key_signature_size" type="text" class="form-control" aria-label="size of key signature" placeholder="(e.g., 10)" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                    </div>
+
+                    <div class="input-group">
+                    <span class="input-group-addon"><span data-tooltip="the entries fraction to form the bucket chain (e.g., 1)." data-tooltip-position="bottom"> Hash Bucket entries fraction </span></span>
+                      <input id="lsh_table_hash_bucket_fraction" type="text" class="form-control" aria-label="entries fraction of hash table bucket" placeholder="1" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                    </div>
+
+                </div>
+
+
+                <!-- LSM-Tree -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <!-- <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a id="scenario3" class="btn btn-default btn-params" type="button" onclick="initScenario3(event)"><span data-tooltip="Using the default LSM-Tree configuration." data-tooltip-position="bottom" style="text-decoration:underline; text-decoration-style: dotted;">LSM-Tree</span></a>
+                        </span>
+                    </div> -->
+                    <div class="row" style="text-align: center">
+                      <span style="font-size:24px" id="lsm_tree_title" data-tooltip="Log-Structured Merge-Tree" data-tooltip-position="bottom">LSM-Tree</span>
+                    </div>
+
+                    <div id="LSM-Tree Merge Policy" class="input-group">
+                    <span class="input-group-addon"><span id="Leveling" name="lsm_tree_type" onclick="MergeByLSMTree(1)" data-tooltip="With leveling, a merge operation takes place at a level as soon as a new run comes in. " data-tooltip-position="bottom" style="cursor:pointer">Leveling &nbsp;</span></span>
+                    <span class="input-group-addon"><span id="Tiering" name="lsm_tree_type" onclick="MergeByLSMTree(0)" data-tooltip=" With tiering, runs can accumulate at level and they only get merged when the level reaches capacity. Warning: this policy can lead to high space-amplification.  " data-tooltip-position="bottom" style="cursor:pointer" >Tiering &nbsp;</span></span>
+                    <!--<span class="input-group-addon"><span id="Lazy-Leveling" name="lsm_tree_type" onclick="MergeByLSMTree(2)" data-tooltip="Lazy leveling applies greedy merging at the largest level and lazy merging at all other levels. " data-tooltip-position="bottom" style="cursor:pointer">Lazy Leveling &nbsp;</span></span>-->
+                      <!-- <span class="input-group-addon">leveling&nbsp;<input id="lsm_tree_type" name="lsm_tree_type" type="radio" aria-label="level" value="1" checked="true" onchange="MergeNotyFliudLSMTree()"/></span>
+                      <span class="input-group-addon">tiering&nbsp;<input id="lsm_tree_type" name="lsm_tree_type" type="radio" aria-label="tier" value="0" onchange="MergeNotyFliudLSMTree()"/></span>
+                      <span class="input-group-addon">lazy leveling&nbsp;<input id="lsm_tree_type" name="lsm_tree_type" type="radio" aria-label="lazylevel" value="2" checked="false" onchange="MergeNotyFliudLSMTree()"/></span> -->
+                      <!-- <span class="input-group-addon">Fliud LSM-Tree&nbsp;<input id="leveltier" name="ltradio" type="radio" aria-label="Fliud LSM-Tree" value="3" checked="false" onchange="MergeByFliudLSMTree()"/></span> -->
+                    </div>
+
+                    <div id="input-group-T" class="input-group" style="display:none">
+                      <span class="input-group-addon"><span data-tooltip="Ratio between capacities of adjacent levels (e.g., 2.0)." data-tooltip-position="bottom"> Size ratio</span></span>
+                      <input id="lsm_tree_T" type="text" class="form-control" aria-label="Size Ratio T" placeholder="Ratio between capacities of adjacent levels (e.g., 2.0)" style="text-align:right" onchange="re_run(event, 'input8')" />
+                      <!-- <span class="input-group-addon">(bytes)</span> -->
+
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon"><span data-tooltip="The specified level number will automatically change the Entry number into the corresponding maximum capacity" data-tooltip-position="bottom"> Levels </span></span>
+                      <input id="lsm_tree_L" type="number" class="form-control" aria-label="Levels" placeholder="Levels" style="text-align:right" onchange="re_run(event, 'input2')"  onwheel="re_run(event, 'input2')"/>
+                    </div>
+
+                    <div class="input-group" style="display:none">
+                      <span class="input-group-addon"><span id="Even-FPR" name="fpr_policy" data-tooltip="Assign the same false positive rate to every run's filter" data-tooltip-position="bottom" onclick="AllocateFPR(0)" style="cursor:pointer">Fixed FPRs&nbsp;</span></span>
+                      <span class="input-group-addon"><span id="Optimal-FPR" name="fpr_policy" data-tooltip="Assign more bits per entry to smaller levels so at to minimize the sum of false positives across al runs" data-tooltip-position="bottom" onclick="AllocateFPR(1)" style="cursor:pointer" >Optimal FPRs&nbsp;</span></span>
+                    </div>
+
+                    <div class="input-group">
+                    <span class="input-group-addon"><span data-tooltip="the filters's memory budget (e.g., 10)." data-tooltip-position="bottom"> M<sub>bf</sub> (bits per entry)</span></span>
+                      <input id="lsm_tree_filters_memory_budget" type="text" class="form-control" aria-label="bits per entry" placeholder="Bloom filters' memory allocated to each entry (e.g., 5)" onchange="re_run(event, 'input7')" style="text-align:right"/>
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                      <input id="lsm_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
+                    </div>
+
+                    <div id="lsm-tree/bush fence-pointer memory" class="input-group" style="display:none">
+                    <span class="input-group-addon"><span data-tooltip="bits per key (e.g., 0.25)." data-tooltip-position="bottom"> Fence Pointers' bits per entry</span></span>
+                      <input id="lsm_tree_mfence_pointer_per_entry" readonly="true" type="text" class="form-control" aria-label="Fence Pointers' memory allocated to each entry (e.g., 0.25)" placeholder="The memory allocated for fence pointers" style="text-align:right"/>
+                    </div>
+
+                    <!-- <br> -->
+
+
+
+
+
+                    <!-- <div id="input-group-Fluid-K" class="input-group" style="display: none">
+                    <span class="input-group-addon"><span data-tooltip="Maximum runs for all levels except the largest one." data-tooltip-position="bottom">17. Fluid LSM-Tree K</span></span>
+                      <input id="Fluid LSM-Tree K" type="number" class="form-control" aria-label="Fluid LSM-Tree K" placeholder="Maximum runs for all levels except the largest one" style="text-align:right" onblur="re_run(event, 'input7')" onchange="re_run(event, 'input7')" onwheel="re_run(event, 'input7')"/>
+
+                    </div>
+                      <br>
+                    <div id="input-group-Fluid-Z" class="input-group" style="display: none">
+                    <span class="input-group-addon"><span data-tooltip="Maximum runs for the largest level" data-tooltip-position="bottom">18. Fluid LSM-Tree Z </span></span>
+                      <input id="Fluid LSM-Tree Z" type="number" class="form-control" aria-label="Fluid LSM-Tree Z" placeholder="Maximum runs for the largest level" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')"/>
+                    </div> -->
+
+                </div>
+
+                <!-- B tree -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <!-- <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a id="scenario1" class="btn btn-default btn-params" type="button" onclick="initScenario1(event)"><span data-tooltip="Using the default LSH-Table configuration." data-tooltip-position="bottom" style="text-decoration:underline; text-decoration-style: dotted;">LSH-Table</span></a>
+                        </span>
+                    </div> -->
+                    <div class="row" style="text-align: center">
+                      <span style="font-size:24px" id="B_epsilon_tree_title" data-tooltip="B &epsilon;-tree" data-tooltip-position="bottom" >B<sup>&epsilon;</sup>-tree</span>
+                    </div>
+
+
+                    <div class="input-group">
+                      <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                      <input id="B_epsilon_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
+                    </div>
+
+
+
+                    <div class="input-group">
+                    <span class="input-group-addon"><span data-tooltip="The levels of the tree" data-tooltip-position="bottom"> Levels </span></span>
+                      <input id="B_epsilon_tree_level" type="number" class="form-control" aria-label="level" placeholder="the level of the tree" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                    </div>
+
+
+
+                </div>
+
+
+                <!-- Design Continuum -->
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <!-- <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a id="scenario1" class="btn btn-default btn-params" type="button" onclick="initScenario1(event)"><span data-tooltip="Using the default LSH-Table configuration." data-tooltip-position="bottom" style="text-decoration:underline; text-decoration-style: dotted;">LSH-Table</span></a>
+                        </span>
+                    </div> -->
+                    <div class="row" style="text-align: center">
+                      <span style="font-size:24px" id="design_continuum_title" data-tooltip="design continuum" data-tooltip-position="bottom" >CrimsonDB: Design Continuum</span>
+                    </div>
+                    <!--
+                    <div class="input-group" style="display:none">
+                    <span class="input-group-addon"><span data-tooltip="Grow factor (fanout in B tree or size ratio in LSM tree)" data-tooltip-position="bottom"> Growth Factor (T) </span></span>
+                      <input id="design_continuum_T" type="number" class="form-control" aria-label="fanout" placeholder="T" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                    </div>
+                       -->
+                    <div class="input-group" style="text-align: center">
+                        <span class="input-group-addon"><span data-tooltip="the fence and filters's memory budget" data-tooltip-position="bottom">M<sub>f</sub> (bits per entry)</span></span>
+                        <input id="design_continuum_memory_budget" class="form-control" aria-label="design_continuum_memory_budget" placeholder="MF" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" />
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                        <input id="design_continuum_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')" />
+                    </div>
+
+                    <div class="input-group">
+
+
+                    </div>
+
+                    <div class="input-group" style="text-align: center" >
+                    <span class="input-group-addon"><span data-tooltip="maximum number of independent sorted partitions (i.e., runs) of hot levels " data-tooltip-position="bottom">Hot merge threshold (K) </span></span>
+                      <input id="design_continuum_K" type="number" class="form-control" aria-label="design_continuum_K" placeholder="K" style="text-align:right" onblur="re_run(event, 'input7')" onchange="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
+
+                    </div>
+
+                    <div class="input-group" style="text-align: center">
+                    <span class="input-group-addon"><span data-tooltip="maximum number of independent sorted partitions (i.e., runs) of cold levels" data-tooltip-position="bottom">Cold merge threshold (Z) </span></span>
+                      <input id="design_continuum_Z" type="number" class="form-control" aria-label="design_continuum_Z" placeholder="Z" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon"><span data-tooltip="The specified level number will automatically change the Entry number into the corresponding maximum capacity" data-tooltip-position="bottom"> Levels (L) </span></span>
+                      <input id="design_continuum_L" type="number" class="form-control" aria-label="Levels" placeholder="Levels" style="text-align:right" onchange="re_run(event, 'input2')"  onwheel="re_run(event, 'input2')" readonly="true"/>
+                    </div>
+
+                <div class="input-group"  style="display:none">
+                <span class="input-group-addon"><span data-tooltip="the maximal blocks of a contiguous data region" data-tooltip-position="bottom">node size(D) </span></span>
+                  <input id="design_continuum_D" type="number" class="form-control" aria-label="design_continuum_D" placeholder="D" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
+                </div>
+
+                    <div class="input-group" style="text-align: center">
+                        <span class="input-group-addon"><span data-tooltip="the maximal blocks of a contiguous data region" data-tooltip-position="bottom">Growth Factor(T) </span></span>
+                        <input id="design_continuum_T" type="number" class="form-control" aria-label="design_continuum_T" placeholder="T" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+
+
+
+            <!-- Result for each architecture -->
+            <div class="row">
+              <!-- LSH-Table Result -->
+              <div id="lsh_table_result" class="col-lg-3 col-md-3 col-sm-3">
+              </div>
+
+              <!-- LSM-Tree -->
+              <div id="lsm_tree_result" class="col-lg-3 col-md-3 col-sm-3">
+              </div>
+
+              <!-- B-e-Tree -->
+              <div id="B_epsilon_tree_result" class="col-lg-3 col-md-3 col-sm-3">
+              </div>
+
+              <!-- design-continuum -->
+              <div id="design_continuum_result" class="col-lg-3 col-md-3 col-sm-3">
+              </div>
+            </div>
+            <br>
+            <div id="breakdown_result" class="row">
+                      <!-- LSM-Tree:a short range lookup issues at most K I/Os per level to the smaller L-1 Levels and at most Z I/Os to the largest level for a total of Z+K*(L-1) random I/Os -->
+
+                      <!-- LSM-Tree:a long range lookup continues with a sequential scan to the relevant key range at each run issuing at least s/B sequential I/Os. The number of sequential I/Os is amplified by (1+1/T) for updated entries at Levels 1 to L-1 and Z for updated entries at Level L. -->
+
+              <!-- LSH-Table Cost -->
+              <div id="lsh_table_cost" class="col-lg-3 col-md-3 col-sm-3">
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="update" data-tooltip-position="bottom">
+                      <p style="font-size:18px">Write</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_write" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="Long-range Lookup" data-tooltip-position="bottom">
+                      <p style="font-size:18px">Range Lookup</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_long_range_lookup" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="Existing-point lookup" data-tooltip-position="bottom">
+                      <p style="font-size:18px">Point Lookup</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_existing_point_lookup" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center">
+                  </div>
+                </div>
+                <div id="Zero-result-lookup-text-Div" style="display:none" class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="Zero-result lookup" data-tooltip-position="bottom">
+                      <p style="font-size:18px">Zero-result Lookup</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_zero_result_lookup" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="Required Storage (including obsolete entries) " data-tooltip-position="bottom">
+                      <p style="font-size:18px">Storage Space</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_storage" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center;">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="Required Memory " data-tooltip-position="bottom">
+                      <p style="font-size:18px;font-weight:bold">Memory Footprint</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_memory" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center;">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 col-sm-7" style="">
+                    <span data-tooltip="Throughput (ops/second)" data-tooltip-position="bottom">
+                      <p style="font-size:18px;font-weight:bold">Throughput</p>
+                    </span>
+                  </div>
+                  <div id="lsh_table_throughput" class="col-lg-5 col-md-5 col-sm-5" style="text-align:center;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- LSMB-Tree Cost -->
+              <div id="lsm_tree_cost" class="col-lg-3 col-md-3 col-sm-3">
+                <div class="row">
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center">
+                    <span data-tooltip="update" data-tooltip-position="bottom">
+                      <p style="text-align: center;font-size:15px">Write</p>
+                    </span>
+                  </div> -->
+                  <div id="lsm_tree_write" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center">
+                    <span data-tooltip="Long-range Lookup" data-tooltip-position="bottom">
+                      <p style="text-align: center;font-size:15px">Range Lookup</p>
+                    </span>
+                  </div> -->
+                  <div id="lsm_tree_long_range_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center">
+                    <span data-tooltip="The worst-case point lookup cost to an existing entry occurs when the target key is to the oldest run at the largest level. The expected I/O cost is one I/O to this target run plus the sum of FPRs across all other runs" data-tooltip-position="bottom">
+                      <p style="text-align: center;font-size:15px">Existing-point Lookup</p>
+                    </span>
+                  </div> -->
+                  <div id="lsm_tree_existing_point_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center">
+                    <span data-tooltip="The cost of zero-result point lookups can be modeled as the sum of false positive rates across every run's Bloom filters" data-tooltip-position="bottom">
+                      <p style="text-align: center;font-size:15px">Zero-result Lookup</p>
+                    </span>
+                  </div> -->
+                  <div id="lsm_tree_zero_result_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;display:none">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="lsm_tree_storage" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;">
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center">
+                    <span data-tooltip="Required Memory for Fence Pointers and Bloom Filters " data-tooltip-position="bottom">
+                      <p style="text-align: center;font-size:15px">Memory</p>
+                    </span>
+                  </div> -->
+                  <div id="lsm_tree_memory" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;d">
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- <div class="col-lg-6 col-md-6 col-sm-6" style="text-align:center">
+                    <span data-tooltip="Throughput (ops/second)" data-tooltip-position="bottom">
+                      <p style="text-align: center;font-size:15px">Throughput</p>
+                    </span>
+                  </div> -->
+                  <div id="lsm_tree_throughput" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- B-epsilon-Tree Cost -->
+              <div id="B_epsilon_tree_cost" class="col-lg-3 col-md-3 col-sm-3">
+                <div class="row">
+                  <div id="B_epsilon_tree_write" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="B_epsilon_tree_long_range_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="B_epsilon_tree_existing_point_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="B_epsilon_tree_zero_result_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;display:none">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="B_epsilon_tree_storage" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="B_epsilon_tree_memory" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;d">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="B_epsilon_tree_throughput" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;">
+                  </div>
+                </div>
+              </div>
+
+              <!-- design-continuum Cost -->
+              <div id="design_continuum_cost" class="col-lg-3 col-md-3 col-sm-3">
+                <div class="row">
+                  <div id="design_continuum_write" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="design_continuum_long_range_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="design_continuum_existing_point_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="design_continuum_zero_result_lookup" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;display:none">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="design_continuum_storage" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="design_continuum_memory" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;d">
+                  </div>
+                </div>
+                <div class="row">
+                  <div id="design_continuum_throughput" class="col-lg-12 col-md-12 col-sm-12" style="text-align:center;">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+
+
+
+            <!-- <div class="row text-center">
+              <div class="col-lg-6 col-md-6 col-sm-6  ">
+                  <div class="input-group input-group-lg text-center">
+                      <span class="input-group-btn">
+                          <a style="width:100%" id="Build" class="btn btn-default btn-params" type="button" onclick="clickbloomTuningButton(false)"><span data-tooltip="Automatically build the tree and calculate the cost according to the specified configuration." data-tooltip-position="bottom" style="font-size:14px">Build And Evaluate</span></a>
+                      </span>
+                  </div>
+                  <br>
+              </div> -->
+                <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a style="width:100%" id="AutoTune1" class="btn btn-default btn-params" type="button" onclick="AutoTune1(event)"><span data-tooltip="Automatically find the best size ratio within a fixed tree structure." data-tooltip-position="bottom" style="font-size:14px">Autotune in Fixed Structure</span></a>
+                        </span>
+                    </div>
+                    <br>
+                </div>-->
+                <!-- <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a style="width:100%" id="AutoTune2" class="btn btn-default btn-params" type="button" onclick="AutoTune2(event)" ><span data-tooltip="Automatically find the best architecture." data-tooltip-position="bottom" style="font-size:14px">Autotune Across Structures</span></a>
+                        </span>
+                    </div>
+                    <br>
+                </div> -->
+                <!--
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="input-group input-group-lg text-center">
+                        <span class="input-group-btn">
+                            <a style="width:100%" id="Autotune3" class="btn btn-default btn-params" type="button" onclick="AutoTune3(event)"><span data-tooltip="Automatically find the best size ratio, K, Z in Fluid LSM-Tree." data-tooltip-position="bottom" style="font-size:14px">Autotune in Fluid LSM-Tree</span></a>
+                        </span>
+                    </div>
+                    <br>
+                </div> -->
+            <!-- </div>
+            <br> -->
+
+
+
+
+            <!-- Plotly chart will be drawn inside this DIV -->
+            <!-- <div class="row text-center">
+
+                <div id="myDiv" class="col-sm-12"></div>
+
+            </div> -->
+
+
+
+            <hr>
+
+        </div>
+    </section>
+
+
+        <!-- Publications Section -->
+    <section class="alternate" id="publications">
+        <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Publications</h2>
+                        <br/>
+                        <br/>
+                </div>
+            </div>
+        <div class="container">
+
+          <div class="row">
+              <div class="col-lg-12 col-md-12 publications">
+                  <p>
+                    Niv Dayan, Stratos Idreos <br />
+                      <a href="http://nivdayan.github.io/LSM-bush.pdf">The Log-Structured Merge-Bush & the Wacky Continuum. </a> <br />
+                      In <span class="venue"> ACM SIGMOD International Conference on Management of Data </span>, 2019<br/><br/>
+                  </p>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-lg-12 col-md-12 publications">
+                  <p>
+                    Stratos Idreos, Niv Dayan, Wilson Qin, Mali Akmanalp, Sophie Hilgard, Andrew Ross,
+James Lennon, Varun Jain, Harshita Gupta, David Li, Zichen Zhu <br />
+                      <a href="https://stratos.seas.harvard.edu/files/stratos/files/selfdesign.pdf">Design Continuums and the Path Toward
+Self-Designing Key-Value Stores that Know and Learn</a> <br />
+                      In <span class="venue"> Biennial Conference on Innovative Data Systems Research (CIDR)</span>, 2019<br/><br/>
+                  </p>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-lg-12 col-md-12 publications">
+                  <p>
+                    Niv Dayan, Manos Athanassoulis, Stratos Idreos<br />
+                      <a href="https://stratos.seas.harvard.edu/files/stratos/files/monkeytods.pdf">Optimal Bloom Filters and Adaptive Merging for LSM-Trees</a> <br />
+                      In <span class="venue"> ACM Transactions on Database Systems </span>, 2018<br/><br/>
+                  </p>
+              </div>
+          </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 publications">
+                    <p>
+                        Niv Dayan, Stratos Idreos<br />
+                        <a href="https://stratos.seas.harvard.edu/files/stratos/files/dostoevskykv.pdf">Dostoevsky: Better Space-Time Trade-Offs for LSM-Tree Based Key-Value Stores via Adaptive Removal of Superfluous Merging</a> <br />
+                        <a href="https://www.youtube.com/watch?v=fmXgXripmh0&t=301s" target="_blank">[paper video]</a> <br/>
+                        In <span class="venue"> ACM SIGMOD International Conference on Management of Data </span>, 2018<br/><br/>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 publications">
+                    <p>
+                        Stratos Idreos, Kostas Zoumpatianos, Brian Hentschel, Michael S. Kester, Demi Guo<br />
+                        <a href="https://stratos.seas.harvard.edu/files/stratos/files/datacalculator.pdf">The Data Calculator: Data Structure Design and Cost Synthesis from First Principles and Learned Cost Models</a> <br />
+                        <a href="https://www.youtube.com/watch?v=uFtkA3CEWY0" target="_blank">[paper video]</a> <br/>
+                        In <span class="venue"> ACM SIGMOD International Conference on Management of Data </span>, 2018<br/><br/>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 publications">
+                    <p>
+                        Niv Dayan, Manos Athanassoulis, Stratos Idreos<br />
+                        <a href="https://stratos.seas.harvard.edu/files/stratos/files/monkeykeyvaluestore.pdf">Monkey: Optimal Navigable Key-Value Store</a> <br />
+                        <a href="../../monkey" target="_blank">[paper website]</a>
+                        <a href="https://www.youtube.com/watch?v=auI8BTws-f8" target="_blank">[paper video]</a> <br/>
+                        In <span class="venue"> ACM SIGMOD International Conference on Management of Data </span>, 2017<br/><br/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- About Section -->
+<!--     <section id="about">
+	    <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                        <br/>
+                        <br/>
+                </div>
+            </div>
+        <div class="container">
+	        <div class="row">
+                <div class="col-lg-12 col-md-12 acknowledgement">
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <a id="seas-link" href="http://seas.harvard.edu" target="_blank" title="Harvard SEAS">Harvard SEAS</a>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <a id="harvard-link" href="http://www.harvard.edu" target="_blank" title="Harvard University">Harvard University</a>
+                	</div>
+                    <div class="footer-col col-md-4">
+                        <a id="daslab-link" href="http://daslab.seas.harvard.edu" target="_blank" title="Harvard DASlab">Harvard DASlab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; 2016 &#8211; 2017 Harvard DASlab. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visble-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Google Analytics -->
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-56717122-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+    </script>
+    <!-- End of Google Analytics Script -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+    <script src="js/lambertw.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <!-- <script src="js/contact_me.js"></script> -->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/show_more.js"></script>
+	<script> setTimeout(init, 200);</script>
+</head>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/disappearMenu.js"></script>
+
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+     var sc_project=10118992;
+  var sc_invisible=1;
+  var sc_security="3f8a8e7c";
+  var scJsHost = (("https:" == document.location.protocol) ?
+  "https://secure." : "http://www.");
+  document.write("<sc"+"ript type='text/javascript' src='" +
+  scJsHost+
+  "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <noscript>
+     <div class="statcounter">
+      <a href="http://statcounter.com/shopify/" target="_blank" title="shopify visitor statistics">
+       <img alt="shopify visitor statistics" class="statcounter" src="http://c.statcounter.com/10118992/0/3f8a8e7c/1/"/>
+      </a>
+     </div>
+    </noscript>
+    <!-- End of StatCounter Code for Default Guide -->
+
+</body>
+
+</html>
