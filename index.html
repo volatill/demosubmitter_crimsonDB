@@ -257,27 +257,51 @@
             <div class="row" style="text-align: center">
                 <div class="col-sm-4" data-tooltip="The dataset consists of 1 TB of data comprising unique 16-byte key-value pairs of 8-byte keys" data-tooltip-position="bottom">
                     <div id="dataset-trigger" onclick="showDataset()">
-                        <img class="img-responsive img-centered" style="width:24%" src="./images/data.png"/ >
-                        <br>
-                        <span style="cursor: pointer;font-size:25px" id="data-text" >
-                            data
-                        </span>
+                        <img class="img-responsive img-centered" style="width:24%" src="./images/data.png"/>
+                        <div class="col-sm-5">
+
+                        </div>
+                        <div class="col-sm-2">
+                            <br>
+                        <span style="cursor: pointer;font-size:25px" id="data-text" >data</span>
+                        </div>
+                        <div class="col-sm-5" style="margin:11.65px 0px">
+                            <img class="img-responsive top-left" style="width:24%" src="./images/vector.png"/>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-sm-4" data-tooltip="The workload consists of 50.000% writes, 49.999% point lookups, and 0.001% range lookups with  target range of 8192 entries" data-tooltip-position="bottom">
                     <div id="workload-trigger" onclick="showWorkload()">
                         <img class="img-responsive img-centered" style="width:24%" src="./images/workload.png"/>
-                        <br>
+
+                        <div class="col-sm-4">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
                         <span style="cursor: pointer;font-size:25px" id="workload-text" >workload</span>
+                        </div>
+                        <div class="col-sm-5" style="margin:11.65px 0px">
+                            <img class="img-responsive top-left" style="width:24%" src="./images/vector.png"/>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-sm-4" data-tooltip="The storage device is an SSD with 4 KB blocks and for which reading a block takes 20 microseconds and writing a block takes 100 microseconds" data-tooltip-position="bottom">
                     <div id="storage-device-trigger" onclick="showStorageDevice()">
                         <img class="img-responsive img-centered" style="width:24%" src="./images/storage.png"/>
-                        <br>
+
+                        <div class="col-sm-4">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <br>
                         <span style="cursor: pointer; font-size:25px" id="storage-text" >hardware</span>
+                        </div>
+                        <div class="col-sm-5" style="margin:11.65px 0px">
+                            <img class="img-responsive top-left" style="width:24%" src="./images/vector.png"/>
+                        </div>
                     </div>
                 </div>
 
@@ -458,12 +482,12 @@
 
                     <div class="input-group">
                     <span class="input-group-addon"><span data-tooltip="the filters's memory budget (e.g., 10)." data-tooltip-position="bottom"> M<sub>bf</sub> (bits per entry)</span></span>
-                      <input id="lsm_tree_filters_memory_budget" type="text" class="form-control" aria-label="bits per entry" placeholder="Bloom filters' memory allocated to each entry (e.g., 5)" onchange="re_run(event, 'input7')" style="text-align:right"/>
+                      <input id="lsm_tree_filters_memory_budget" type="text" class="form-control" aria-label="bits per entry" placeholder="Bloom filters' memory allocated to each entry (e.g., 5)" onchange="re_run(event, 'lsm_memory')" style="text-align:right"/>
                     </div>
 
                     <div class="input-group">
                       <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
-                      <input id="lsm_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
+                      <input id="lsm_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'lsm_memory')" onwheel="re_run(event, 'lsm_memory')"/>
                     </div>
 
                     <div id="lsm-tree/bush fence-pointer memory" class="input-group" style="display:none">
