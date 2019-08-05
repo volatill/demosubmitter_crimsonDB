@@ -267,10 +267,13 @@ function re_run(e, input_type) {
     // }
     var lsm_tree_type=getBoldButtonByName("lsm_tree_type");
     update_lsm_tree(event.target.id, lsm_tree_type, lsm_tree_L, lsm_tree_T, lsm_tree_mbuffer, N, E, obsolete_coefficient);
+    /*
     if(input_type=='lsm_memory'){
         document.getElementById("design_continuum_mbuffer").value=document.getElementById("lsm_tree_mbuffer").value;
         document.getElementById("design_continuum_memory_budget").value=document.getElementById("lsm_tree_filters_memory_budget").value;
     }
+
+     */
     //B_epsilon tree
     var level = document.getElementById("B_epsilon_tree_level").value;
     var max_b_epsilon_tree_level = Math.ceil(Math.log((N+1)/2)/Math.log(2) - 1);

@@ -560,8 +560,13 @@
                     </div>
                        -->
                     <div class="input-group" style="text-align: center">
-                        <span class="input-group-addon"><span data-tooltip="the fence and filters's memory budget" data-tooltip-position="bottom">M<sub>f</sub> (bits per entry)</span></span>
-                        <input id="design_continuum_memory_budget" class="form-control" aria-label="design_continuum_memory_budget" placeholder="MF" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" />
+                        <span class="input-group-addon"><span data-tooltip="the filters's memory budget" data-tooltip-position="bottom">M<sub>bf</sub> (bits per entry)</span></span>
+                        <input id="design_continuum_memory_budget" class="form-control" aria-label="design_continuum_memory_budget" placeholder="MBF" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" />
+                    </div>
+
+                    <div class="input-group" style="text-align: center">
+                        <span class="input-group-addon"><span data-tooltip="the fence's memory budget" data-tooltip-position="bottom">M<sub>fp</sub> (bits per entry)</span></span>
+                        <input id="design_continuum_fence_memory_budget" class="form-control" aria-label="design_continuum_memory_budget" placeholder="MFP" style="text-align:right" readonly="true"/>
                     </div>
 
                     <div class="input-group">
@@ -576,13 +581,13 @@
 
                     <div class="input-group" style="text-align: center" >
                     <span class="input-group-addon"><span data-tooltip="maximum number of independent sorted partitions (i.e., runs) of hot levels " data-tooltip-position="bottom">Hot merge threshold (K) </span></span>
-                      <input id="design_continuum_K" type="number" class="form-control" aria-label="design_continuum_K" placeholder="K" style="text-align:right" onblur="re_run(event, 'input7')" onchange="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
+                      <input id="design_continuum_K" type="number" class="form-control" aria-label="design_continuum_K" placeholder="K" style="text-align:right" readonly="true"/><!--onblur="re_run(event, 'input7')" onchange="re_run(event, 'input7')" onwheel="re_run(event, 'input7')"-->
 
                     </div>
 
                     <div class="input-group" style="text-align: center">
                     <span class="input-group-addon"><span data-tooltip="maximum number of independent sorted partitions (i.e., runs) of cold levels" data-tooltip-position="bottom">Cold merge threshold (Z) </span></span>
-                      <input id="design_continuum_Z" type="number" class="form-control" aria-label="design_continuum_Z" placeholder="Z" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
+                      <input id="design_continuum_Z" type="number" class="form-control" aria-label="design_continuum_Z" placeholder="Z" style="text-align:right" readonly="true"/> <!--onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')"-->
                     </div>
 
                     <div class="input-group">
