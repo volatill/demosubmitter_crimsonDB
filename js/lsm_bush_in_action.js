@@ -1423,7 +1423,7 @@ function draw_lsm_graph(prefix) {
 			// 		Y = calc_Y(mfilter_per_entry, K, Z, T, L)
 			// 	}
 			mfence_pointer = (Math.pow(T, L - Y) - 1)/(T - 1)*mbuffer/P*key_size*T;
-			document.getElementById("design_continuum_fence_memory_budget").value=mfence_pointer/1024/1024/1024;
+			document.getElementById("design_continuum_fence_memory_budget").value=(mfence_pointer/1024/1024/1024).toFixed(2);
 			mfilter = MF;
 		}else{
 			Y = calc_Y(MBF*8/tmpN, K, Z, T, L);
