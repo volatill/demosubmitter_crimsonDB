@@ -168,7 +168,7 @@ function navigateDesignSpace() {
 		0,
 		0]
 
-	var lsm_memory = parseFloat(document.getElementById("lsm_tree_memory").textContent.substring(0,document.getElementById("lsm_tree_memory").textContent.length-2));
+	var lsm_memory = parseFloat(document.getElementById("design_continuum_total_memory_budget").value);
 
 	//console.log(lsm_memory);
 	var lsm_mbf = document.getElementById("lsm_tree_filters_memory_budget").value;
@@ -1119,6 +1119,7 @@ function initScenario3(){
 
 function initScenario4(){
 	// LSM-Tree
+    document.getElementById('design_continuum_total_memory_budget').value=parseFloat(document.getElementById("lsm_tree_memory").textContent.substring(0,document.getElementById("lsm_tree_memory").textContent.length-2));
 	document.getElementById("design_continuum_mbuffer").value=2; //in MB
 	document.getElementById("design_continuum_memory_budget").value=2; //0 bits per element
 	document.getElementById("design_continuum_L").value=7;
@@ -1357,7 +1358,7 @@ function scenario4()
 {
 	var bestDesign=navigateDesignSpace();
 	//document.getElementById("design_continuum_mbuffer").value=2; //in MB
-	document.getElementById("design_continuum_memory_budget").value=bestDesign.M_F; //0 bits per element
+	document.getElementById("design_continuum_memory_budget").value=bestDesign.M_F.toFixed(1); //0 bits per element
 	document.getElementById("design_continuum_L").value=bestDesign.L;
 	document.getElementById("design_continuum_K").value=bestDesign.K;
 	document.getElementById("design_continuum_Z").value=bestDesign.Z;
@@ -1835,6 +1836,9 @@ function draw_lsm_graph(prefix) {
 				cost = (Math.ceil(cost*1000)/1000).toFixed(3)
 			}
 
+            //if(j==4&&prefix=='lsm_tree')
+                //document.getElementById('design_continuum_total_memory_budget').value=(msg_cost/8/Math.pow(1024,3)).toFixed(1);
+
 			var message;
 			if(j < 4){
 				message = "The total cost of " +text_array[j]+ " is " + 	msg_cost + " I/O(s)."
@@ -1867,6 +1871,8 @@ function draw_lsm_graph(prefix) {
 
 			span_tmp.appendChild(p_tmp);
 			div_tmp.appendChild(span_tmp);
+
+
 		}
 		var omega=1e-6;
 		var throughput = 1/total_cost/omega;
