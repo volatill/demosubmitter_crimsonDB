@@ -174,8 +174,8 @@ function navigateDesignSpace() {
 	var lsm_mbf = document.getElementById("lsm_tree_filters_memory_budget").value;
 	mbuffer = document.getElementById("lsm_tree_mbuffer").value*1024*1024;
 	var step_num = 10;
-
-	for(T=2;T<=4;T+=1) {
+	/*
+	for(T=2;T<=10;T+=1) {
 		for (K = 1; K <=T - 1; K++) {
 			for (Z = 1; Z <= T - 1; Z++) {
 				for (var i=1 ; i<step_num*2 ; i++) {
@@ -196,9 +196,9 @@ function navigateDesignSpace() {
 						Y = Math.max(Math.ceil(cold_level_approximation), 0);
 						mfence_pointer = (Math.pow(T, L - Y) - 1) / (T - 1) * mbuffer / P * key_size * T;
 						mfilter = MF - mfence_pointer;
-						console.log(T+" "+K+" "+i);
-						console.log(lsm_memory*1024*1024*1024+"--"+MF+"--"+mfence_pointer+"--"+mfence_pointer);
-						console.log("sub="+(lsm_memory*1024*1024*1024 - MF - mfence_pointer - mbuffer)+", mbuffer="+mbuffer);
+						//console.log(T+" "+K+" "+i);
+						//console.log(lsm_memory*1024*1024*1024+"--"+MF+"--"+mfence_pointer+"--"+mfence_pointer);
+						//console.log("sub="+(lsm_memory*1024*1024*1024 - MF - mfence_pointer - mbuffer)+", mbuffer="+mbuffer);
 						if((Math.abs(lsm_memory*1024*1024*1024 - MF - mfence_pointer - mbuffer) <100))
 							break;
 						else if((lsm_memory*1024*1024*1024 - MF - mfence_pointer - mbuffer)<0){
@@ -250,6 +250,78 @@ function navigateDesignSpace() {
 						bestDesign.K = K;
 						bestDesign.L = L;
 						bestDesign.M_B = mbuffer;
+					}
+				}
+			}
+		}
+	}
+	*/
+	for(T=2;T<=10;T+=1) {
+		for (K = 1; K <=T - 1; K++) {
+			for (Z = 1; Z <= T - 1; Z++) {
+				for (var i=1 ; i< step_num ; i++) {
+					//var MF_B = parseFloat(document.getElementById("design_continuum_memory_budget").value);
+					mbuffer = lsm_memory*i*1024*1024*1024/step_num;
+					var total_cost = 0.0;
+					var maxN = (Z + 1.0 / T) * N;
+					MF=lsm_memory*1024*1024*1024-mbuffer;
+					//MF = parseFloat(MF_B) / 8 * tmpN;
+					var tmpN = Math.min(N + obsolete_coefficient * (maxN - N), 2 * N);
+					var L = Math.log(tmpN * E * (T - 1) / mbuffer + 1) / Math.log(T) - 1;
+					var EULER = 2.71822182245904523536;
+					var X = Math.pow(Math.log(EULER) / Math.log(2), 2) * (Math.log(T) / Math.log(EULER) / (T - 1) + Math.log(K / Z) / Math.log(EULER) / T) / 8;
+
+
+					var cold_level_approximation = Math.log(tmpN / MF * (X / T + key_size / B) * T / (T - 1)) / Math.log(T);
+					Y = Math.max(Math.ceil(cold_level_approximation), 0);
+					mfence_pointer = (Math.pow(T, L - Y) - 1) / (T - 1) * mbuffer / P * key_size * T;
+					MF=lsm_memory*1024*1024*1024-mbuffer-mfence_pointer;
+
+					var MF_B=MF*8/tmpN;
+					mfilter = MF;
+
+					var tmp_mfilter_bits = mfilter * 8;
+					var mfence_pointer_per_entry = mfence_pointer / tmpN;
+					var mfilter_per_entry = mfilter / tmpN;
+					filters = getMonkeyFPassigment(0, E, mbuffer, T, K, Z, Y, tmp_mfilter_bits, P, leveltier, isOptimalFPR, r, v, tmpN, lsm_bush_K, T);
+					L = Math.ceil(L);
+					for (j1 = 0; j1 <= 3; j1++) {
+						//console.log(j1);
+						var cost = total_function_array[j1](i + 1, mbuffer / E, E, L, filters, N, T, B, Y, K, Z, s, Mu, isOptimalFPR, leveltier, lsm_bush_K, T, key_size, mfence_pointer_per_entry);
+						//console.log("The "+j1+" cost is"+cost);
+						total_cost += coefficient_array[j1] * cost;
+						//console.log(total_cost+" "+coefficient_array[j1] * cost);
+						var msg_cost = cost;
+						if (cost * 1000 % 1 != 0) {
+							msg_cost = cost.toExponential(5);
+						}
+						var threshold_flag = false;
+						if (cost > 1e7) {
+							cost = cost.toExponential(2);
+						} else if (cost <= THRESHOLD) {
+							if (cost != 0) {
+								threshold_flag = true;
+							}
+							cost = 0.0;
+						} else if (typeof cost == 'number' && cost * 1000 < 1) {
+							cost = myCeil(cost, 1).toExponential(1)
+						} else if (cost * 1000 % 1 != 0) {
+							cost = (Math.ceil(cost * 1000) / 1000).toFixed(3)
+						}
+
+					}
+					//console.log("This cycle parameter is"+T+" "+" "+K+" "+Z+" "+MF_B+"  Cost is "+total_cost);
+					if (minCost == 0 || minCost > total_cost) {
+						minCost = total_cost;
+						bestDesign.total_cost = total_cost;
+						bestDesign.T = T;
+						bestDesign.Z = Z;
+						bestDesign.M_F = MF_B;
+						bestDesign.K = K;
+						bestDesign.L = L;
+						bestDesign.M_B = mbuffer;
+						console.log(formatBytes(mfence_pointer)+"___"+MF/1024/1024/1024+"___"+mbuffer/1024/1024/1024);
+						console.log("L="+L+",Y="+Y);
 					}
 				}
 			}
@@ -1358,7 +1430,7 @@ function scenario4()
 {
 	var bestDesign=navigateDesignSpace();
 	//document.getElementById("design_continuum_mbuffer").value=2; //in MB
-	document.getElementById("design_continuum_memory_budget").value=bestDesign.M_F.toFixed(1); //0 bits per element
+	document.getElementById("design_continuum_memory_budget").value=bestDesign.M_F.toFixed(3); //0 bits per element
 	document.getElementById("design_continuum_L").value=bestDesign.L;
 	document.getElementById("design_continuum_K").value=bestDesign.K;
 	document.getElementById("design_continuum_Z").value=bestDesign.Z;
@@ -1435,7 +1507,7 @@ function draw_lsm_graph(prefix) {
 		var mfence_pointer_per_entry = mfence_pointer/tmpN;
 		var mfilter_per_entry = mfilter/tmpN;
 		var tmp_mfilter_bits = mfilter*8;
-
+		console.log("L="+L+",Y="+Y);
 		if(prefix == "design_continuum"){
 			title = "Design Continuum"
 		}else{
