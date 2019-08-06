@@ -137,7 +137,13 @@
    cursor: default;
 }
 
+.trigger{
+    background-color: white;
+}
 
+.trigger :hover{
+    background-color: lightgrey;
+}
 
 /*.button:hover {
    border: 2px solid #000000;

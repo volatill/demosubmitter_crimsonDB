@@ -256,7 +256,7 @@ function navigateDesignSpace() {
 		}
 	}
 	*/
-	for(T=2;T<=10;T+=1) {
+	for(T=2;T<=20;T+=1) {
 		for (K = 1; K <=T - 1; K++) {
 			for (Z = 1; Z <= T - 1; Z++) {
 				for (var i=1 ; i< step_num ; i++) {
