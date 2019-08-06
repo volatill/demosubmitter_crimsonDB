@@ -141,7 +141,7 @@
     background-color: white;
 }
 
-.trigger :hover{
+.trigger:hover{
     background-color: lightgrey;
 }
 
