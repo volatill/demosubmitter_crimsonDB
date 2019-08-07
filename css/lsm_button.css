@@ -139,10 +139,11 @@
 
 .trigger{
     background-color: white;
+    border-radius: 15px;
 }
 
 .trigger:hover{
-    background-color: lightgrey;
+    background-color: #ecf0f1;
 }
 
 /*.button:hover {
