@@ -415,7 +415,7 @@
 
                     <div class="input-group">
                     <span class="input-group-addon"><span data-tooltip="The size of compact key signature (e.g., 10)." data-tooltip-position="bottom"> Key Signature Size (bits) </span></span>
-                      <input id="lsh_table_key_signature_size" type="text" class="form-control" aria-label="size of key signature" placeholder="(e.g., 10)" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                      <input id="lsh_table_key_signature_size" type="number" class="form-control" aria-label="size of key signature" placeholder="(e.g., 10)" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
 
                     <div class="input-group">
@@ -466,7 +466,7 @@
 
                     <div class="input-group">
                     <span class="input-group-addon"><span data-tooltip="the filters's memory budget (e.g., 10)." data-tooltip-position="bottom"> M<sub>bf</sub> (bits per entry)</span></span>
-                      <input id="lsm_tree_filters_memory_budget" type="text" class="form-control" aria-label="bits per entry" placeholder="Bloom filters' memory allocated to each entry (e.g., 5)" onchange="re_run(event, 'lsm_memory')" style="text-align:right"/>
+                      <input id="lsm_tree_filters_memory_budget" type="number" class="form-control" aria-label="bits per entry" placeholder="Bloom filters' memory allocated to each entry (e.g., 5)" onchange="re_run(event, 'lsm_memory')" style="text-align:right"/>
                     </div>
 
                     <div class="input-group">
