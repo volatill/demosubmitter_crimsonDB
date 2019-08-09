@@ -15,8 +15,10 @@
     padding: 4px 8px;
     font-size: 14px;
     line-height: 1.4;
+    max-width: 500px;
     min-width: 300px;
     text-align: center;
+    white-space: pre-wrap;
     border-radius: 4px;
 }
 /* Dynamic horizontal centering */

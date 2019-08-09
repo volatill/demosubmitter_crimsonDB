@@ -75,6 +75,7 @@ function re_run(e, input_type) {
 	    }
 	}
 
+
     if(event.target.id.endsWith("mfilter_per_entry"))
     {
         var mfilter_per_entry = parseFloat(document.getElementById(event.target.id).value);
