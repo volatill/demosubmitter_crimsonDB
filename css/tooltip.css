@@ -20,6 +20,7 @@
     text-align: center;
     white-space: pre-wrap;
     border-radius: 4px;
+    
 }
 /* Dynamic horizontal centering */
 [data-tooltip-position="top"]:before,
