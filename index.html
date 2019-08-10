@@ -301,13 +301,13 @@
                     </div>
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Key-Value pair size in bytes (e.g., 16)." data-tooltip-position="bottom"> Entry size (bytes)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Key-Value pair size in bytes (e.g., 16)" data-tooltip-position="bottom"> Entry size (bytes)</span></span>
                         <input id="E" type="number" class="form-control" aria-label="Key-Value pair size (bytes)" placeholder="Key-Value pair size in bytes (e.g., 16)" style="text-align:right" onchange="re_run(event, 'dataset_input')" onwheel="re_run(event, 'dataset_input')"  />
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Key size in bytes (e.g., 8)." data-tooltip-position="bottom"> Key size (bytes)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Key size in bytes (e.g., 8)" data-tooltip-position="bottom"> Key size (bytes)</span></span>
                         <input id="Key-Size" type="text" class="form-control" aria-label="Key size (bytes)" placeholder="Key size in bytes (e.g., 8)" style="text-align:right" onchange="re_run(event, 'dataset_input')"/>
                       </div>
                     </div>
@@ -318,7 +318,7 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Block Size in bytes (e.g., 4096)." data-tooltip-position="bottom"> Block size (bytes)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Block Size in bytes (e.g., 4096)" data-tooltip-position="bottom"> Block size (bytes)</span></span>
                         <input id="P" type="number" class="form-control" aria-label="Block Size B (bytes)" placeholder="Block Size in bytes (e.g., 4096)" style="text-align:right" onchange="re_run(event, 'storage_input')" onwheel="re_run(event, 'storage_input')"/>
                       </div>
                     </div>
@@ -402,24 +402,24 @@
                     </div>
 
                     <div class="input-group">
-                    <span class="input-group-addon"><span data-tooltip="The fraction of obsolete entries at which point garbage-collection is triggered  (e.g., 0.5)." data-tooltip-position="bottom"> Garbage Collection Threshold </span></span>
+                    <span class="input-group-addon"><span data-tooltip="The fraction of obsolete entries at which point garbage-collection is triggered  (e.g., 0.5)" data-tooltip-position="bottom"> Garbage Collection Threshold </span></span>
                       <input id="lsh_table_gc_threshold" type="text" class="form-control" aria-label="threshold for garbage collection" placeholder="(e.g., 0.5)" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
 
 
 
                     <div class="input-group" style="display:none">
-                      <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                      <span class="input-group-addon"><span data-tooltip="Buffer size in MB (e.g., 2)" data-tooltip-position="bottom"> Buffer size (MB)</span></span>
                       <input id="lsh_table_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
                     </div>
 
                     <div class="input-group">
-                    <span class="input-group-addon"><span data-tooltip="The size of compact key signature (e.g., 10)." data-tooltip-position="bottom"> Key Signature Size (bits) </span></span>
+                    <span class="input-group-addon"><span data-tooltip="The size of compact key signature (e.g., 10)" data-tooltip-position="bottom"> Key Signature Size (bits) </span></span>
                       <input id="lsh_table_key_signature_size" type="number" class="form-control" aria-label="size of key signature" placeholder="(e.g., 10)" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
 
                     <div class="input-group">
-                    <span class="input-group-addon"><span data-tooltip="the entries fraction to form the bucket chain (e.g., 1)." data-tooltip-position="bottom"> Hash Bucket entries fraction </span></span>
+                    <span class="input-group-addon"><span data-tooltip="The entries fraction to form the bucket chain (e.g., 1)" data-tooltip-position="bottom"> Hash Bucket entries fraction </span></span>
                       <input id="lsh_table_hash_bucket_fraction" type="text" class="form-control" aria-label="entries fraction of hash table bucket" placeholder="1" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
 
@@ -448,7 +448,7 @@
                     </div>
 
                     <div id="input-group-T" class="input-group" style="display:none">
-                      <span class="input-group-addon"><span data-tooltip="Ratio between capacities of adjacent levels (e.g., 2.0)." data-tooltip-position="bottom"> Size ratio</span></span>
+                      <span class="input-group-addon"><span data-tooltip="Ratio between capacities of adjacent levels (e.g., 2.0)" data-tooltip-position="bottom"> Size ratio</span></span>
                       <input id="lsm_tree_T" type="text" class="form-control" aria-label="Size Ratio T" placeholder="Ratio between capacities of adjacent levels (e.g., 2.0)" style="text-align:right" onchange="re_run(event, 'input8')" />
                       <!-- <span class="input-group-addon">(bytes)</span> -->
 
@@ -465,17 +465,17 @@
                     </div>
 
                     <div class="input-group">
-                    <span class="input-group-addon"><span data-tooltip="the filters's memory budget (e.g., 10)." data-tooltip-position="bottom"> M<sub>bf</sub> (bits per entry)</span></span>
+                    <span class="input-group-addon"><span data-tooltip="The filters's memory budget (e.g., 10)" data-tooltip-position="bottom"> M<sub>bf</sub> (bits per entry)</span></span>
                       <input id="lsm_tree_filters_memory_budget" type="number" class="form-control" aria-label="bits per entry" placeholder="Bloom filters' memory allocated to each entry (e.g., 5)" onchange="re_run(event, 'lsm_memory')" style="text-align:right"/>
                     </div>
 
                     <div class="input-group">
-                      <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                      <span class="input-group-addon"><span data-tooltip="Buffer size in MB (e.g., 2)" data-tooltip-position="bottom"> Buffer size (MB)</span></span>
                       <input id="lsm_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'lsm_memory')" onwheel="re_run(event, 'lsm_memory')"/>
                     </div>
 
                     <div id="lsm-tree/bush fence-pointer memory" class="input-group" style="display:none">
-                    <span class="input-group-addon"><span data-tooltip="bits per key (e.g., 0.25)." data-tooltip-position="bottom"> Fence Pointers' bits per entry</span></span>
+                    <span class="input-group-addon"><span data-tooltip="Bits per key (e.g., 0.25)" data-tooltip-position="bottom"> Fence Pointers' bits per entry</span></span>
                       <input id="lsm_tree_mfence_pointer_per_entry" readonly="true" type="text" class="form-control" aria-label="Fence Pointers' memory allocated to each entry (e.g., 0.25)" placeholder="The memory allocated for fence pointers" style="text-align:right"/>
                     </div>
 
@@ -511,7 +511,7 @@
 
 
                     <div class="input-group">
-                      <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                      <span class="input-group-addon"><span data-tooltip="Buffer size in MB (e.g., 2)" data-tooltip-position="bottom"> Buffer size (MB)</span></span>
                       <input id="B_epsilon_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
                     </div>
 
@@ -544,7 +544,7 @@
                     </div>
                        -->
                     <div class="input-group" style="text-align: center">
-                        <span class="input-group-addon"><span data-tooltip="total memory budget" data-tooltip-position="bottom"> Memory footprint (GB)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Total memory budget" data-tooltip-position="bottom"> Memory footprint (GB)</span></span>
                         <input id="design_continuum_total_memory_budget" class="form-control" aria-label="design_continuum_total_memory_budget" placeholder="M" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
                     <div class="input-group">
@@ -552,45 +552,45 @@
 
                     </div>
                     <div class="input-group" style="text-align: center">
-                        <span class="input-group-addon"><span data-tooltip="the filters's memory budget" data-tooltip-position="bottom">M<sub>bf</sub> (bits per entry)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="The filters's memory budget" data-tooltip-position="bottom">M<sub>bf</sub> (bits per entry)</span></span>
                         <input id="design_continuum_memory_budget" class="form-control" aria-label="design_continuum_memory_budget" placeholder="MBF" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" readonly="true"/>
                     </div>
 
                     <div class="input-group" style="text-align: center">
-                        <span class="input-group-addon"><span data-tooltip="the fence's memory budget" data-tooltip-position="bottom">M<sub>fp</sub> (GB)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="The fence's memory budget" data-tooltip-position="bottom">M<sub>fp</sub> (GB)</span></span>
                         <input id="design_continuum_fence_memory_budget" class="form-control" aria-label="design_continuum_fence_memory_budget" placeholder="MFP" style="text-align:right" readonly="true"/>
                     </div>
 
                     <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Buffer Size in MB (e.g., 2)." data-tooltip-position="bottom"> Buffer size (MB)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Buffer size in MB (e.g., 2)" data-tooltip-position="bottom"> Buffer size (MB)</span></span>
                         <input id="design_continuum_mbuffer"  class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')" readonly="true"/>
                     </div>
 
 
 
                     <div class="input-group" style="text-align: center" >
-                    <span class="input-group-addon"><span data-tooltip="maximum number of independent sorted partitions (i.e., runs) of hot levels " data-tooltip-position="bottom">Hot merge threshold (K) </span></span>
+                    <span class="input-group-addon"><span data-tooltip="Maximum number of independent sorted partitions (i.e., runs) of hot levels " data-tooltip-position="bottom">Hot merge threshold (K) </span></span>
                       <input id="design_continuum_K"  class="form-control" aria-label="design_continuum_K" placeholder="K" style="text-align:right" readonly="true"/><!--onblur="re_run(event, 'input7')" onchange="re_run(event, 'input7')" onwheel="re_run(event, 'input7')"-->
 
                     </div>
 
                     <div class="input-group" style="text-align: center">
-                    <span class="input-group-addon"><span data-tooltip="maximum number of independent sorted partitions (i.e., runs) of cold levels" data-tooltip-position="bottom">Cold merge threshold (Z) </span></span>
+                    <span class="input-group-addon"><span data-tooltip="Maximum number of independent sorted partitions (i.e., runs) of cold levels" data-tooltip-position="bottom">Cold merge threshold (Z) </span></span>
                       <input id="design_continuum_Z"  class="form-control" aria-label="design_continuum_Z" placeholder="Z" style="text-align:right" readonly="true"/> <!--onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')"-->
                     </div>
 
                     <div class="input-group">
-                      <span class="input-group-addon"><span data-tooltip="The specified level number will automatically change the Entry number into the corresponding maximum capacity" data-tooltip-position="bottom"> Levels (L) </span></span>
+                      <span class="input-group-addon"><span data-tooltip="The specified level number will automatically change the entry number into the corresponding maximum capacity" data-tooltip-position="bottom"> Levels (L) </span></span>
                       <input id="design_continuum_L"  class="form-control" aria-label="Levels" placeholder="Levels" style="text-align:right" onchange="re_run(event, 'input2')"  onwheel="re_run(event, 'input2')" readonly="true"/>
                     </div>
 
                 <div class="input-group"  style="display:none">
-                <span class="input-group-addon"><span data-tooltip="the maximal blocks of a contiguous data region" data-tooltip-position="bottom">node size(D) </span></span>
+                <span class="input-group-addon"><span data-tooltip="The maximal blocks of a contiguous data region" data-tooltip-position="bottom">node size(D) </span></span>
                   <input id="design_continuum_D"  class="form-control" aria-label="design_continuum_D" placeholder="D" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
                 </div>
 
                     <div class="input-group" style="text-align: center">
-                        <span class="input-group-addon"><span data-tooltip="the maximal blocks of a contiguous data region" data-tooltip-position="bottom">Growth Factor(T) </span></span>
+                        <span class="input-group-addon"><span data-tooltip="The maximal blocks of a contiguous data region" data-tooltip-position="bottom">Growth Factor(T) </span></span>
                         <input id="design_continuum_T"  class="form-control" aria-label="design_continuum_T" placeholder="T" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
                     </div>
 
@@ -619,13 +619,14 @@
               </div>
             </div>
             <br>
-            <div id="breakdown_result" class="row">
+        </div>
+            <div id="breakdown_result" class="container page-scroll" style="width:1350px;">
                       <!-- LSM-Tree:a short range lookup issues at most K I/Os per level to the smaller L-1 Levels and at most Z I/Os to the largest level for a total of Z+K*(L-1) random I/Os -->
 
                       <!-- LSM-Tree:a long range lookup continues with a sequential scan to the relevant key range at each run issuing at least s/B sequential I/Os. The number of sequential I/Os is amplified by (1+1/T) for updated entries at Levels 1 to L-1 and Z for updated entries at Level L. -->
 
               <!-- LSH-Table Cost -->
-              <div id="lsh_table_cost" class="col-lg-3 col-md-3 col-sm-3">
+              <div id="lsh_table_cost" class="col-lg-3 col-md-3 col-sm-3" style="right: 100px">
                 <div class="row">
                   <div class="col-lg-7 col-md-7 col-sm-7" style="">
                     <span data-tooltip="update" data-tooltip-position="bottom">
@@ -872,7 +873,7 @@
 
             <hr>
 
-        </div>
+
     </section>
 
 

@@ -320,14 +320,11 @@ function navigateDesignSpace() {
 						bestDesign.K = K;
 						bestDesign.L = L;
 						bestDesign.M_B = mbuffer;
-						console.log(formatBytes(mfence_pointer)+"___"+MF/1024/1024/1024+"___"+mbuffer/1024/1024/1024);
-						console.log("L="+L+",Y="+Y);
 					}
 				}
 			}
 		}
 	}
-	console.log(bestDesign.M_B/1024/1024);
 	return bestDesign;
 
 
@@ -1507,7 +1504,6 @@ function draw_lsm_graph(prefix) {
 		var mfence_pointer_per_entry = mfence_pointer/tmpN;
 		var mfilter_per_entry = mfilter/tmpN;
 		var tmp_mfilter_bits = mfilter*8;
-		console.log("L="+L+",Y="+Y);
 		if(prefix == "design_continuum"){
 			title = "Design Continuum"
 		}else{
