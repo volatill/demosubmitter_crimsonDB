@@ -295,13 +295,13 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="input-group" >
-                        <span class="input-group-addon"><span data-tooltip="Number of Entries in the Index (e.g., 10485760), which automatically changes the Level number" data-tooltip-position="bottom"> # Entries</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Number of entries in the Index (e.g., 10485760), which automatically changes the Level number" data-tooltip-position="bottom"> # Entries</span></span>
                         <input id="N" type="text" class="form-control" aria-label="Index Size N (elements)" placeholder="Number of Entries in the Index (e.g., 10485760)" style="text-align:right" onchange="re_run(event, 'dataset_input')"/>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Key-Value pair size in bytes (e.g., 16)" data-tooltip-position="bottom"> Entry size (bytes)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Key-value pair size in bytes (e.g., 16)" data-tooltip-position="bottom"> Entry size (bytes)</span></span>
                         <input id="E" type="number" class="form-control" aria-label="Key-Value pair size (bytes)" placeholder="Key-Value pair size in bytes (e.g., 16)" style="text-align:right" onchange="re_run(event, 'dataset_input')" onwheel="re_run(event, 'dataset_input')"  />
                       </div>
                     </div>
@@ -318,19 +318,19 @@
                   <div class="row">
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Block Size in bytes (e.g., 4096)" data-tooltip-position="bottom"> Block size (bytes)</span></span>
+                        <span class="input-group-addon"><span data-tooltip="Block size in bytes (e.g., 4096)" data-tooltip-position="bottom"> Block size (bytes)</span></span>
                         <input id="P" type="number" class="form-control" aria-label="Block Size B (bytes)" placeholder="Block Size in bytes (e.g., 4096)" style="text-align:right" onchange="re_run(event, 'storage_input')" onwheel="re_run(event, 'storage_input')"/>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Read Latency (microseconds)" data-tooltip-position="bottom"> Read Latency (&mu;s) </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Read latency (microseconds)" data-tooltip-position="bottom"> Read Latency (&mu;s) </span></span>
                         <input id="read-latency" type="text" class="form-control" aria-label="mu" placeholder="Read Latency (e.g., 20)" style="text-align:right" onchange="re_run(event, 'storage_input')" />
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Write Latency (microseconds)" data-tooltip-position="bottom"> Write Latency (&mu;s) </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Write latency (microseconds)" data-tooltip-position="bottom"> Write Latency (&mu;s) </span></span>
                         <input id="write-latency" type="text" class="form-control" aria-label="mu" placeholder="Write Latency (e.g., 100)" style="text-align:right" onchange="re_run(event, 'storage_input')" />
                       </div>
                     </div>
@@ -347,18 +347,18 @@
                   <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Proportion of Write" data-tooltip-position="bottom"> Proportion of Write </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Proportion of write" data-tooltip-position="bottom"> Proportion of Write </span></span>
                         <input id="w" type="text" class="form-control" aria-label="proportion of write operation" placeholder=" w (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'workload_input')" />
                       </div>
 
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Obsolescence Coefficient" data-tooltip-position="bottom"> Obsolescence Coefficient </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Obsolescence coefficient" data-tooltip-position="bottom"> Obsolescence Coefficient </span></span>
                         <input id="obsolete_coefficient" type="text" class="form-control" aria-label="Obsolescence Coefficient" placeholder=" Obsolescence Coefficient (e.g., 0)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
                       </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Proportion of Range Lookup Operation" data-tooltip-position="bottom"> Proportion of  Range Lookup  </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Proportion of range lookup operation" data-tooltip-position="bottom"> Proportion of  Range Lookup  </span></span>
                         <input id="qL" type="text" class="form-control" aria-label="proportion of range lookup operation" placeholder=" qL (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
                       </div>
 
@@ -369,12 +369,12 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4">
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Proportion of Existing Point Lookup Operation" data-tooltip-position="bottom"> Proportion of Existing Point Lookup </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Proportion of existing point lookup operation" data-tooltip-position="bottom"> Proportion of Existing Point Lookup </span></span>
                         <input id="v" type="text" class="form-control" aria-label="proportion of existing point lookup operation" placeholder=" v (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
                       </div>
 
                       <div class="input-group">
-                        <span class="input-group-addon"><span data-tooltip="Proportion of Non-result Point Lookup Operation" data-tooltip-position="bottom"> Proportion of Non-result Point Lookup </span></span>
+                        <span class="input-group-addon"><span data-tooltip="Proportion of non-result point lookup operation" data-tooltip-position="bottom"> Proportion of Non-result Point Lookup </span></span>
                         <input id="r" type="text" class="form-control" aria-label="proportion of non-result point lookup operation" placeholder=" r (e.g., 1)"  style="text-align:right" onchange="re_run(event, 'workload_input')" onwheel="re_run(event, 'workload_input')" />
                       </div>
                     </div>
