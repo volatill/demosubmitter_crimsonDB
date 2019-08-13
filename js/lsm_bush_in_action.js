@@ -3352,3 +3352,17 @@ function hideWorkload(){
 	document.getElementById('workload-trigger').onclick=function(){showWorkload();}
 	document.getElementById("workload-setting").style.display='none';
 }
+
+function showDesign(){
+	//document.getElementById('data-text').style.fontWeight='bold';
+	document.getElementById('design-trigger').onclick=function(){hideDesign();}
+	document.getElementById("design-setting").style.display='';
+
+}
+
+function hideDesign(){
+	//document.getElementById('data-text').style.fontWeight='bold';
+	document.getElementById('design-trigger').onclick=function(){showDesign();}
+	document.getElementById("design-setting").style.display='none';
+
+}

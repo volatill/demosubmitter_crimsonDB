@@ -387,9 +387,24 @@
             </div>
 
             <br>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 trigger" style="cursor: pointer">
+                    <div id="design-trigger" onclick="showDesign()">
+                        <img class="img-responsive img-centered" style="width:105px" src="./images/arrow.png"/>
+                        <br>
+                        <span style="cursor: pointer;font-size:25px" id="design-text" ></span>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
             <br>
             <!-- Configuration for each architecture -->
-            <div class="row" style="margin:20px 0px">
+            <div class="row" id="design-setting" style="margin:20px 0px; display :none">
                 <!-- LSH-Table -->
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <!-- <div class="input-group input-group-lg text-center">
