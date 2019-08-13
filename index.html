@@ -387,24 +387,10 @@
             </div>
 
             <br>
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4 trigger" style="cursor: pointer">
-                    <div id="design-trigger" onclick="showDesign()">
-                        <img class="img-responsive img-centered" style="width:105px" src="./images/arrow.png"/>
-                        <br>
-                        <span style="cursor: pointer;font-size:25px" id="design-text" ></span>
-                    </div>
-                </div>
-                <div class="col-sm-4"></div>
-                </div>
-                <div class="col-sm-4"></div>
-            </div>
+
             <br>
             <!-- Configuration for each architecture -->
-            <div class="row" id="design-setting" style="margin:20px 0px; display :none">
+            <div class="row" id="design-setting" style="margin:20px 0px;">
                 <!-- LSH-Table -->
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <!-- <div class="input-group input-group-lg text-center">
@@ -413,8 +399,18 @@
                         </span>
                     </div> -->
                     <div class="row" style="text-align: center">
+                        <div style="display: inline-block">
                       <span style="font-size:24px" data-tooltip="Log-Structured Hash-Table" data-tooltip-position="bottom" >LSH-Table</span>
+                        </div>
+                        <div class="trigger" style="cursor: pointer; width:30px;display: inline-block">
+                            <div id="lsh-trigger" onclick="showLSH()">
+                                <img class="img-responsive img-centered" style="width:30px" src="./images/arrow.png"/>
+                            </div>
+                        </div>
+
                     </div>
+
+                    <div id="lsh-setting" style="display: none">
 
                     <div class="input-group">
                     <span class="input-group-addon"><span data-tooltip="The fraction of obsolete entries at which point garbage-collection is triggered  (e.g., 0.5)" data-tooltip-position="bottom"> Garbage Collection Threshold </span></span>
@@ -436,6 +432,8 @@
                     <div class="input-group">
                     <span class="input-group-addon"><span data-tooltip="The entries fraction to form the bucket chain (e.g., 1)" data-tooltip-position="bottom"> Hash Bucket entries fraction </span></span>
                       <input id="lsh_table_hash_bucket_fraction" type="text" class="form-control" aria-label="entries fraction of hash table bucket" placeholder="1" style="text-align:right" onchange="re_run(event, 'input4')"/>
+                    </div>
+
                     </div>
 
                 </div>

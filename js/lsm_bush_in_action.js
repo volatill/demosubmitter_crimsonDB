@@ -3353,16 +3353,16 @@ function hideWorkload(){
 	document.getElementById("workload-setting").style.display='none';
 }
 
-function showDesign(){
+function showLSH(){
 	//document.getElementById('data-text').style.fontWeight='bold';
-	document.getElementById('design-trigger').onclick=function(){hideDesign();}
-	document.getElementById("design-setting").style.display='';
+	document.getElementById('lsh-trigger').onclick=function(){hideLSH();}
+	document.getElementById("lsh-setting").style.display='';
 
 }
 
-function hideDesign(){
+function hideLSH(){
 	//document.getElementById('data-text').style.fontWeight='bold';
-	document.getElementById('design-trigger').onclick=function(){showDesign();}
-	document.getElementById("design-setting").style.display='none';
+	document.getElementById('lsh-trigger').onclick=function(){showLSH();}
+	document.getElementById("lsh-setting").style.display='none';
 
 }
