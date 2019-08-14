@@ -1224,6 +1224,9 @@ function init(){
 	document.getElementById("Leveling").style.fontSize='16px';
 	//document.getElementById("Optimal-FPR").style.fontWeight='bold';
 	//document.getElementById("Optimal-FPR").style.fontSize='16px';
+	$(".rotate").click(function () {
+		$(this).toggleClass("down");
+	})
 
 	initScenario1();
 	initScenario2();

@@ -1,5 +1,6 @@
 var timer=null;
 
+
 function update_lsm_tree(id, lsm_tree_type, lsm_tree_L, lsm_tree_T, lsm_tree_mbuffer, N, E, obsolete_coefficient){
   if(id == 'lsm_tree_L' || id == 'obsolete_coefficient' || id == 'lsm_tree_Z'){
     var result = getLSMTreeT(lsm_tree_type);
