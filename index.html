@@ -450,7 +450,16 @@
                         </span>
                     </div> -->
                     <div class="row" style="text-align: center">
+                        <div style="display: inline-block">
                       <span style="font-size:24px" id="lsm_tree_title" data-tooltip="Log-Structured Merge-Tree" data-tooltip-position="bottom">LSM-Tree</span>
+                        </div>
+                        <div class="trigger rotate" style="cursor: pointer; width:25px;display: inline-block" data-toggle="collapse" href="#lsm-setting" role="button" aria-expanded="false">
+                            <div id="lsm-trigger" onclick="">
+
+                                <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
+
+                            </div>
+                        </div>
                     </div>
 
                     <div id="LSM-Tree Merge Policy" class="input-group">
@@ -463,6 +472,7 @@
                       <!-- <span class="input-group-addon">Fliud LSM-Tree&nbsp;<input id="leveltier" name="ltradio" type="radio" aria-label="Fliud LSM-Tree" value="3" checked="false" onchange="MergeByFliudLSMTree()"/></span> -->
                     </div>
 
+                    <div id="lsm-setting" class="collapse multi-collapse" style="">
                     <div id="input-group-T" class="input-group" style="display:none">
                       <span class="input-group-addon"><span data-tooltip="Ratio between capacities of adjacent levels (e.g., 2.0)" data-tooltip-position="bottom"> Size ratio</span></span>
                       <input id="lsm_tree_T" type="text" class="form-control" aria-label="Size Ratio T" placeholder="Ratio between capacities of adjacent levels (e.g., 2.0)" style="text-align:right" onchange="re_run(event, 'input8')" />
@@ -495,6 +505,8 @@
                       <input id="lsm_tree_mfence_pointer_per_entry" readonly="true" type="text" class="form-control" aria-label="Fence Pointers' memory allocated to each entry (e.g., 0.25)" placeholder="The memory allocated for fence pointers" style="text-align:right"/>
                     </div>
 
+                    </div>
+
                     <!-- <br> -->
 
 
@@ -521,11 +533,22 @@
                             <a id="scenario1" class="btn btn-default btn-params" type="button" onclick="initScenario1(event)"><span data-tooltip="Using the default LSH-Table configuration." data-tooltip-position="bottom" style="text-decoration:underline; text-decoration-style: dotted;">LSH-Table</span></a>
                         </span>
                     </div> -->
+
+
                     <div class="row" style="text-align: center">
+                        <div style="display: inline-block">
                       <span style="font-size:24px" id="B_epsilon_tree_title" data-tooltip="B &epsilon;-tree" data-tooltip-position="bottom" >B<sup>&epsilon;</sup>-tree</span>
+                        </div>
+                        <div class="trigger rotate" style="cursor: pointer; width:25px;display: inline-block" data-toggle="collapse" href="#b-setting" role="button" aria-expanded="false">
+                            <div id="b-trigger" onclick="">
+
+                                <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
+
+                            </div>
+                        </div>
                     </div>
 
-
+                    <div id="b-setting" class="collapse multi-collapse" style="">
                     <div class="input-group">
                       <span class="input-group-addon"><span data-tooltip="Buffer size in MB (e.g., 2)" data-tooltip-position="bottom"> Buffer size (MB)</span></span>
                       <input id="B_epsilon_tree_mbuffer" type="number" class="form-control" aria-label="Buffer Size Mbuffer (MB)" placeholder="Buffer Size in MB (e.g., 2)"  style="text-align:right" onchange="re_run(event, 'input4')" onwheel="re_run(event, 'input4')"/>
@@ -537,7 +560,7 @@
                     <span class="input-group-addon"><span data-tooltip="The levels of the tree" data-tooltip-position="bottom"> Levels </span></span>
                       <input id="B_epsilon_tree_level" type="number" class="form-control" aria-label="level" placeholder="the level of the tree" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
-
+                    </div>
 
 
                 </div>
@@ -551,7 +574,16 @@
                         </span>
                     </div> -->
                     <div class="row" style="text-align: center">
-                      <span style="font-size:24px" id="design_continuum_title" data-tooltip="design continuum" data-tooltip-position="bottom" >CrimsonDB: Design Continuum</span>
+                        <div style="display: inline-block; ">
+                      <span style="font-size:24px" id="design_continuum_title" data-tooltip="design continuum" data-tooltip-position="bottom" >CrimsonDB</span>
+                    </div>
+                    <div class="trigger rotate" style="cursor: pointer; width:25px;display: inline-block" data-toggle="collapse" href="#crimson-setting" role="button" aria-expanded="false">
+                        <div id="design-continuum-trigger" onclick="">
+
+                            <img class="img-responsive img-centered" style="width:25px" src="./images/arrow.png"/>
+
+                        </div>
+                    </div>
                     </div>
                     <!--
                     <div class="input-group" style="display:none">
@@ -559,6 +591,7 @@
                       <input id="design_continuum_T" type="number" class="form-control" aria-label="fanout" placeholder="T" style="text-align:right" onchange="re_run(event, 'input4')"/>
                     </div>
                        -->
+                    <div id="crimson-setting" class="collapse multi-collapse" style="">
                     <div class="input-group" style="text-align: center">
                         <span class="input-group-addon"><span data-tooltip="Total memory budget" data-tooltip-position="bottom"> Memory footprint (GB)</span></span>
                         <input id="design_continuum_total_memory_budget" class="form-control" aria-label="design_continuum_total_memory_budget" placeholder="M" style="text-align:right" onchange="re_run(event, 'input4')"/>
@@ -609,7 +642,7 @@
                         <span class="input-group-addon"><span data-tooltip="The maximal blocks of a contiguous data region" data-tooltip-position="bottom">Growth Factor(T) </span></span>
                         <input id="design_continuum_T"  class="form-control" aria-label="design_continuum_T" placeholder="T" style="text-align:right" onkeyup="re_run(event, 'input9')" onblur="re_run(event, 'input7')" onwheel="re_run(event, 'input7')" readonly="true"/>
                     </div>
-
+                    </div>
                 </div>
             </div>
             <br>
