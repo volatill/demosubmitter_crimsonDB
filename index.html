@@ -246,8 +246,22 @@
         </div>
     </section> -->
 
+
     <section id="interactiveDemo">
-        <div class="container page-scroll" style="width:1320px; position: relative; left: 55px">
+
+        <div class="wrapper">
+            <ul class="StepProgress">
+                <li class="StepProgress-item is-done"><strong>1</strong></li>
+                <li class="StepProgress-item is-done"><strong>2</strong>
+                    The workload consists of 50.000% writes, 49.999% point lookups, and 0.001% range lookups with  target range of 8192 entries
+                </li>
+                <li class="StepProgress-item current"><strong>3</strong></li>
+                <li class="StepProgress-item"><strong>4</strong></li>
+                <li class="StepProgress-item"><strong>5</strong></li>
+            </ul>
+        </div>
+
+        <div class="container page-scroll" style="width:1320px;  position: relative; left: 55px">
 
             <!-- <a href="#interactiveDemo" id="interactiveDemo"></a>  -->
 
@@ -668,8 +682,8 @@
               </div>
             </div>
             <br>
-        </div>
-            <div id="breakdown_result" class="container page-scroll" style="position:relative; width:1330px; left: 55px">
+
+            <div id="breakdown_result" >
                       <!-- LSM-Tree:a short range lookup issues at most K I/Os per level to the smaller L-1 Levels and at most Z I/Os to the largest level for a total of Z+K*(L-1) random I/Os -->
 
                       <!-- LSM-Tree:a long range lookup continues with a sequential scan to the relevant key range at each run issuing at least s/B sequential I/Os. The number of sequential I/Os is amplified by (1+1/T) for updated entries at Levels 1 to L-1 and Z for updated entries at Level L. -->
@@ -868,6 +882,8 @@
               </div>
             </div>
             <br>
+
+        </div>
 
 
 
