@@ -249,7 +249,7 @@
 
     <section id="interactiveDemo">
 
-        <div class="container page-scroll" style="width:1350px;">
+        <div class="container page-scroll" style="width:90%;">
 
             <!-- <a href="#interactiveDemo" id="interactiveDemo"></a> -->
 
@@ -463,7 +463,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <div id="lsm-setting" class="collapse multi-collapse" style="">
                     <div id="LSM-Tree Merge Policy" class="input-group">
                     <span class="input-group-addon"><span id="Leveling" name="lsm_tree_type" onclick="MergeByLSMTree(1)" data-tooltip="With leveling, a merge operation takes place at a level as soon as a new run comes in. " data-tooltip-position="bottom" style="cursor:pointer">Leveling &nbsp;</span></span>
                     <span class="input-group-addon"><span id="Tiering" name="lsm_tree_type" onclick="MergeByLSMTree(0)" data-tooltip=" With tiering, runs can accumulate at level and they only get merged when the level reaches capacity. Warning: this policy can lead to high space-amplification.  " data-tooltip-position="bottom" style="cursor:pointer" >Tiering &nbsp;</span></span>
@@ -474,7 +474,7 @@
                       <!-- <span class="input-group-addon">Fliud LSM-Tree&nbsp;<input id="leveltier" name="ltradio" type="radio" aria-label="Fliud LSM-Tree" value="3" checked="false" onchange="MergeByFliudLSMTree()"/></span> -->
                     </div>
 
-                    <div id="lsm-setting" class="collapse multi-collapse" style="">
+
                     <div id="input-group-T" class="input-group" style="display:none">
                       <span class="input-group-addon"><span data-tooltip="Ratio between capacities of adjacent levels (e.g., 2.0)" data-tooltip-position="bottom"> Size ratio</span></span>
                       <input id="lsm_tree_T" type="text" class="form-control" aria-label="Size Ratio T" placeholder="Ratio between capacities of adjacent levels (e.g., 2.0)" style="text-align:right" onchange="re_run(event, 'input8')" />
@@ -677,7 +677,7 @@
                       <!-- LSM-Tree:a long range lookup continues with a sequential scan to the relevant key range at each run issuing at least s/B sequential I/Os. The number of sequential I/Os is amplified by (1+1/T) for updated entries at Levels 1 to L-1 and Z for updated entries at Level L. -->
 
               <!-- LSH-Table Cost -->
-              <div id="lsh_table_cost" class="col-lg-3 col-md-3 col-sm-3" style="right: 65px">
+              <div id="lsh_table_cost" class="col-lg-3 col-md-3 col-sm-3" style="right: 5%">
                 <div class="row">
                   <div class="col-lg-7 col-md-7 col-sm-7" style="">
                     <span data-tooltip="update" data-tooltip-position="bottom">
