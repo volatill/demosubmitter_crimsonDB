@@ -75,8 +75,7 @@ function re_run(e, input_type) {
 	        return;
 	    }
 	}
-
-
+    
     if(event.target.id.endsWith("mfilter_per_entry"))
     {
         var mfilter_per_entry = parseFloat(document.getElementById(event.target.id).value);
@@ -476,7 +475,6 @@ function re_run_now() {
       document.getElementById("N").value=68719476736;
       return;
     }
-
 
     //clickbloomTuningButton(false)
 
