@@ -160,14 +160,15 @@
 
 .numberCircle {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    padding: 2px;
-    background: white;
+    width: 22px;
+    height: 22px;
+    padding: 0px;
+    padding-left: 1px;
+    background: #A51C30;
     border: 2px solid #A51C30;
     vertical-align: middle;
-    color: #A51C30;
-    font: 20px helvetica, sans-serif ;
+    color: white;
+    font: 15px helvetica, sans-serif ;
 }
 /*.button:hover {
    border: 2px solid #000000;
